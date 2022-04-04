@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  margin: 10px;
+}
+.list {
+  border: 2px solid green;
+  min-height: 20px;
+}
+.todo-list-title {
+  display: flex;
+  font-size: 1.2rem;
+}
+.list-container {
+  padding: 5px;
+  border: 2px solid red;
+}
+.list-item {
+  border: 2px solid yellow;
+}
