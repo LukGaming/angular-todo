@@ -1,19 +1,61 @@
 .container {
   display: flex;
+  /* margin: 10px; */
   margin: 10px;
 }
 .list {
-  border: 2px solid green;
-  min-height: 20px;
+  /* border: 2px solid green; */
+  min-height: 30px;
+  padding: 10px;
+  background-color: #ebecf0;
 }
 .todo-list-title {
-  display: flex;
+  background-color: #ebecf0;
+  border: 1px solid black;
+  /* display: flex; */
   font-size: 1.2rem;
+  border-bottom: 2px solid black;
+  /* margin: 5px; */
+  padding: 10px;
+  /* text-align: center; */
+  /* margin: auto; */
+  text-align: center;
 }
 .list-container {
-  padding: 5px;
-  border: 2px solid red;
+  max-width: 20vw;
+  width: 20vw;
+  /* padding: 5px; */
+  /* border: 2px solid red; */
+  background-color: list-containerhite;
+  margin: 10px;
 }
 .list-item {
-  border: 2px solid yellow;
+  background-color: #ffffff;
+  /* padding: 5px;g
+  he */
+  padding: 10px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 2px;
+  user-select: none;
+  box-shadow: 1px 1px 1px white;
 }
+.list-item-title{
+  margin: 5px;
+}
+.new-item{
+  background-color: #ffffff;
+  padding: 10px;
+  max-height: 30px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 2px;
+  user-select: none;
+  box-shadow: 1px 1px 1px white;
+}
+.space_to_new_item{
+  margin-top: 10px;
+  border-bottom: 2px solid black;
+}
+

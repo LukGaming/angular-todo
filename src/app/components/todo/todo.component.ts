@@ -10,8 +10,8 @@ import {
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep']
 
+  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep']
   done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog']
   constructor () {}
 
@@ -31,5 +31,10 @@ export class TodoComponent implements OnInit {
         event.currentIndex
       )
     }
+  }
+  newItem($event: any){
+    this.todo.push($event.target.value)
+    $event.target.value = ''
+    // console.log()
   }
 }
