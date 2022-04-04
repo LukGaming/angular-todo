@@ -1,0 +1,52 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "todo_name": "Segunda-Feira",
+      "todos_itens": [
+        "Get to work",
+        "Pick up groceries",
+        "Go home",
+        "Fall asleep"
+      ]
+    },
+    {
+      "id": 2,
+      "todo_name": "Terca-Feira",
+      "todos_itens": [
+        "Meu amigo tijolo",
+        "Pick up groceries",
+        "Go home",
+        "Fall asleep"
+      ]
+    },
+    {
+      "id": 3,
+      "todo_name": "Quarta-Feira",
+      "todos_itens": [
+        "Get to work",
+        "Pick up groceries",
+        "Go home",
+        "Fall asleep"
+      ]
+    },
+    {
+      "id": 4,
+      "todo_name": "Quinta-feira",
+      "todos_itens": [
+        "Meu amigo tijolo",
+        "Pick up groceries",
+        "Go home",
+        "Fall asleep"
+      ]
+    },
+    {
+      "todo_name": "teste",
+      "todos_itens": [
+        "teste99",
+        "teste999"
+      ],
+      "id": 5
+    }
+  ]
+}

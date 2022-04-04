@@ -24,7 +24,6 @@
       </div>
     </div>
   </div> -->
-
   <div cdkDropListGroup class="container">
     <!-- Forma programática -->
     <div class="list-container" *ngFor="let todo of todos; let i = index">
@@ -39,5 +38,6 @@
         <input type="text" class="new-item" placeholder="Novo Item" (keydown.enter)="newItem($event, i)">
       </div>
     </div>
+    <input type="text" class="new-item" placeholder="Nova Lista de Todos" (keydown.enter)="newListItem($event)">
   </div>
 </div>

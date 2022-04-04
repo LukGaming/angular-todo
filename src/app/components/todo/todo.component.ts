@@ -1,62 +1,21 @@
+import { moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop'
 import { Component, OnInit } from '@angular/core'
-import {
-  CdkDragDrop,
-  moveItemInArray,
-  transferArrayItem
-} from '@angular/cdk/drag-drop'
+import { TodoService } from 'src/app/services/todo.service'
+
+import { todo } from './todo'
+
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  // todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep']
-  // done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog']
-  todos = [
-    {
-      id: 1,
-      todo_name: 'Segunda-Feira',
-      todos_itens: [
-        'Get to work',
-        'Pick up groceries',
-        'Go home',
-        'Fall asleep'
-      ]
-    },
-    {
-      id: 2,
-      todo_name: 'Terca-Feira',
-      todos_itens: [
-        'Meu amigo tijolo',
-        'Pick up groceries',
-        'Go home',
-        'Fall asleep'
-      ]
-    },
-    {
-      id: 3,
-      todo_name: 'Quarta-Feira',
-      todos_itens: [
-        'Get to work',
-        'Pick up groceries',
-        'Go home',
-        'Fall asleep'
-      ]
-    },
-    {
-      id: 4,
-      todo_name: 'Quinta-feira',
-      todos_itens: [
-        'Meu amigo tijolo',
-        'Pick up groceries',
-        'Go home',
-        'Fall asleep'
-      ]
-    }
-  ]
-  constructor () {}
+  todos: any = []
+  constructor (private todoService: TodoService) {}
 
-  ngOnInit (): void {}
+  ngOnInit (): void {
+    this.todoService.getTodos().subscribe(res => this.todos = res)
+  }
   drop (event: any, index: any) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
@@ -77,6 +36,17 @@ export class TodoComponent implements OnInit {
     // console.log(this.todos[index])
     this.todos[index].todos_itens.push($event.target.value)
     $event.target.value = ''
-    // console.log()
+    console.log(this.todos[index])
+    this.todoService.createtodoInArray(this.todos[index]).subscribe(res =>console.log(res))
+  }
+  newListItem ($event: any) {
+    this.todoService.createTodoList($event.target.value).subscribe(res => console.log(res))
+    this.todos.push({
+      id: this.todos.length + 1,
+      todo_name: $event.target.value,
+      todos_itens: []
+    })
+    $event.target.value = ''
+
   }
 }
