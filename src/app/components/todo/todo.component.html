@@ -28,8 +28,8 @@
     <!-- Forma programática -->
     <div class="list-container" *ngFor="let todo of todos; let i = index">
       <div class="todo-list-title">{{todo.todo_name}}</div>
-      <div cdkDropList [cdkDropListData]="todo.todos_itens" class="list" (cdkDropListDropped)="drop($event, i)">
-        <div class="list-item" *ngFor="let item of todo.todos_itens" cdkDrag>
+      <div cdkDropList [cdkDropListData]="todo.todos_itens" class="list"  (cdkDropListDropped)="drop($event, i)" >
+        <div class="list-item" *ngFor="let item of todo.todos_itens" cdkDrag (cdkDragMoved)="move($event,i)">
           <div class="list-item-title" contentEditable="true">
             {{item}}
           </div>

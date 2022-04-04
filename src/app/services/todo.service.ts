@@ -10,14 +10,17 @@ export class TodoService {
   url = 'http://localhost:3000/todos'
   constructor (private http: HttpClient) {}
   createTodoList (nameList: string) {
-
-    return this.http.post<todo>(this.url, {todo_name: nameList, todos_itens: []}).pipe(take(1))
+    return this.http
+      .post<todo>(this.url, { todo_name: nameList, todos_itens: [] })
+      .pipe(take(1))
   }
-  getTodos(){
+  getTodos () {
     return this.http.get(this.url).pipe(take(1))
   }
-  createtodoInArray(todo: todo){
-    console.log(todo)
+  createtodoInArray (todo: todo) {
+    return this.http.patch(`${this.url}/${todo.id}`, todo).pipe(take(1))
+  }
+  transferTodoToOtherTodo (todo: todo) {
     return this.http.patch(`${this.url}/${todo.id}`, todo).pipe(take(1))
   }
 }
